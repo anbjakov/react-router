@@ -1,4 +1,5 @@
 import {NavLink} from "react-router-dom";
+import Button from "@mui/material/Button";
 const Header = ()=>{
     return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
@@ -25,6 +26,10 @@ const Header = ()=>{
                             end
                             to="hotels">Hotels</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <Button  variant="contained">Login</Button>
+                    </li>
+
                 </ul>
             </nav>
     )

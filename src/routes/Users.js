@@ -12,7 +12,7 @@ const Users = ()=>{
         })
     setLoaded(false);
     },[])
-    const handleShowMore = (id)=>{
+    const handleShowMore = (id)=> () =>{
         navigate(`/users/${id}`)
     }
     return (
@@ -44,7 +44,7 @@ const Users = ()=>{
                                 </td>
                                 <td>
                                     <button type='button' className="btn btn-primary"
-                                            onClick={()=>handleShowMore(`${id}`)}>
+                                            onClick={handleShowMore(`${id}`)}>
                                             Show more
                                     </button>
                                 </td>
