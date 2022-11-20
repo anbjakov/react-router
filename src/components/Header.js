@@ -1,6 +1,11 @@
 import {NavLink} from "react-router-dom";
-import Button from "@mui/material/Button";
+import {useContext} from "react";
+import AuthContext from "../contexts/AuthContext";
+import LoginForm from "./LoginForm";
+import LoggedUser from "./LoggedUser";
 const Header = ()=>{
+    const {isLoggedIn} = useContext(AuthContext);
+
     return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
                 <a className="navbar-brand" href="#">
@@ -27,7 +32,10 @@ const Header = ()=>{
                             to="hotels">Hotels</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Button  variant="contained">Login</Button>
+                        {isLoggedIn ?
+                            <LoggedUser/> :
+                            <LoginForm />
+                        }
                     </li>
 
                 </ul>
